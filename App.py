@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 import time
 import random
 
-# Enhanced Matrix AI Call Center theme
+# Enhanced Matrix AI Call Center theme with sidebar modifications
 def apply_matrix_theme():
     st.markdown("""
     <style>
@@ -25,11 +25,94 @@ def apply_matrix_theme():
         --matrix-darker: #050505;
     }
     
-    /* Hide Streamlit elements */
+    /* Hide default Streamlit elements */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
     .stDeployButton {visibility: hidden;}
+    
+    /* Show and style sidebar toggle button */
+    .st-emotion-cache-1cypcdb .st-emotion-cache-1inwz65 {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Style the sidebar toggle button */
+    button[title="Close sidebar"] {
+        background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,143,17,0.3)) !important;
+        border: 2px solid var(--matrix-green) !important;
+        border-radius: 8px !important;
+        color: var(--matrix-green) !important;
+        font-family: 'Orbitron', monospace !important;
+        font-weight: 700 !important;
+        text-shadow: 0 0 8px var(--matrix-green) !important;
+        box-shadow: 0 0 15px rgba(0,255,65,0.4) !important;
+        transition: all 0.3s ease !important;
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        z-index: 9999 !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 8px !important;
+    }
+    
+    button[title="Close sidebar"]:hover {
+        background: linear-gradient(45deg, rgba(0,143,17,0.6), rgba(0,255,65,0.4)) !important;
+        color: #000000 !important;
+        text-shadow: 0 0 8px #000000 !important;
+        box-shadow: 0 0 25px rgba(0,255,65,0.6) !important;
+        transform: scale(1.1) !important;
+        border-color: var(--matrix-bright-green) !important;
+    }
+    
+    button[title="Open sidebar"] {
+        background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,143,17,0.3)) !important;
+        border: 2px solid var(--matrix-green) !important;
+        border-radius: 8px !important;
+        color: var(--matrix-green) !important;
+        font-family: 'Orbitron', monospace !important;
+        font-weight: 700 !important;
+        text-shadow: 0 0 8px var(--matrix-green) !important;
+        box-shadow: 0 0 15px rgba(0,255,65,0.4) !important;
+        transition: all 0.3s ease !important;
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        z-index: 9999 !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 8px !important;
+    }
+    
+    button[title="Open sidebar"]:hover {
+        background: linear-gradient(45deg, rgba(0,143,17,0.6), rgba(0,255,65,0.4)) !important;
+        color: #000000 !important;
+        text-shadow: 0 0 8px #000000 !important;
+        box-shadow: 0 0 25px rgba(0,255,65,0.6) !important;
+        transform: scale(1.1) !important;
+        border-color: var(--matrix-bright-green) !important;
+    }
+    
+    /* Ensure sidebar is always visible and accessible */
+    .css-1d391kg {
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+    }
+    
+    /* Force sidebar to be expanded by default */
+    .css-1d391kg, .css-1cypcdb {
+        width: 21rem !important;
+        min-width: 21rem !important;
+    }
+    
+    /* Make sure main content adjusts when sidebar is open */
+    .main .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        max-width: none !important;
+    }
     
     /* Main app styling */
     .stApp {
@@ -676,6 +759,23 @@ def create_services_section():
             <h3 style="color: #39ff14; margin-bottom: 15px;">AI VOICE AGENTS</h3>
             <p style="color: #00ff41; margin-bottom: 15px;">
                 Advanced neural network voice processing with real-time sentiment analysis
+            </p>
+            <ul style="color: #008f11; text-align: left; font-size: 0.9rem;">
+                <li>Natural Language Processing</li>
+                <li>Multi-language Support</li>
+                <li>Emotion Recognition</li>
+                <li>24/7 Availability</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div class="service-card">
+            <span class="service-icon" style="color: #00ffff;">📊</span>
+            <h3 style="color: #00ffff; margin-bottom: 15px;">DATA ANALYTICS</h3>
+            <p style="color: #00ff41; margin-bottom: 15px;">
+                Real-time call analytics and performance monitoring dashboard
             </p>
             <ul style="color: #008f11; text-align: left; font-size: 0.9rem;">
                 <li>Call Quality Analysis</li>
@@ -1447,31 +1547,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-with col1:
-    st.markdown("""
-    <div>
-        <ul>
-            <li>Natural Language Processing</li>
-            <li>Multi-language Support</li>
-            <li>Emotion Recognition</li>
-            <li>24/7 Availability</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="service-card">
-        <span class="service-icon" style="color: #00ffff;">📊</span>
-        <h3 style="color: #00ffff; margin-bottom: 15px;">DATA ANALYTICS</h3>
-        <p style="color: #00ff41; margin-bottom: 15px;">
-            Real-time call analytics and performance monitoring dashboard
-        </p>
-        <ul style="color: #008f11; text-align: left; font-size: 0.9rem;">
-            <li>Key metrics tracking</li>
-            <li>Performance reporting</li>
-            <li>Custom dashboards</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
