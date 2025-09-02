@@ -1448,24 +1448,30 @@ def main():
 if __name__ == "__main__":
     main()
 
-st.markdown("""
-<div>
-    <ul>
-        <li>Natural Language Processing</li>
-        <li>Multi-language Support</li>
-        <li>Emotion Recognition</li>
-        <li>24/7 Availability</li>
-    </ul>
-</div>
-""", unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="service-card">
-            <span class="service-icon" style="color: #00ffff;">📊</span>
-            <h3 style="color: #00ffff; margin-bottom: 15px;">DATA ANALYTICS</h3>
-            <p style="color: #00ff41; margin-bottom: 15px;">
-                Real-time call analytics and performance monitoring dashboard
-            </p>
-            <ul style="color: #008f11; text-align: left; font-size: 0.9rem;">
-                <li>
+with col1:
+    st.markdown("""
+    <div>
+        <ul>
+            <li>Natural Language Processing</li>
+            <li>Multi-language Support</li>
+            <li>Emotion Recognition</li>
+            <li>24/7 Availability</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="service-card">
+        <span class="service-icon" style="color: #00ffff;">📊</span>
+        <h3 style="color: #00ffff; margin-bottom: 15px;">DATA ANALYTICS</h3>
+        <p style="color: #00ff41; margin-bottom: 15px;">
+            Real-time call analytics and performance monitoring dashboard
+        </p>
+        <ul style="color: #008f11; text-align: left; font-size: 0.9rem;">
+            <li>Key metrics tracking</li>
+            <li>Performance reporting</li>
+            <li>Custom dashboards</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
