@@ -1446,13 +1446,18 @@ def main():
     """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
-    main()Natural Language Processing</li>
-                <li>Multi-language Support</li>
-                <li>Emotion Recognition</li>
-                <li>24/7 Availability</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
+    main()
+
+st.markdown("""
+<div>
+    <ul>
+        <li>Natural Language Processing</li>
+        <li>Multi-language Support</li>
+        <li>Emotion Recognition</li>
+        <li>24/7 Availability</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
